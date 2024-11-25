@@ -1,0 +1,27 @@
+1. cmd창에
+python -m venv (가상환경이름)
+그러면 venv라는 폴더가 생김
+
+2. venv/Scripts 의 activate.bat 파일을 실행시켜 가상환경으로 진입
+cmd창에서는 경로를 맞추고 activate를 입력하면 됨
+
+3. venv의 상위폴더에 가상환경cmd에서 Django REST framework와 CORS 설치
+pip install djangorestframework django-cors-headers
+이때, pip업데이트가 필요하면 업데이트를 했음
+
+4. django-admin startproject 프로젝트명 으로 폴더를 하나 만듬
+django-admin startproject back
+
+5. venv의 상위폴더에 플러터앱 폴더를 갖다넣음
+
+6. python manage.py startapp 앱이름 으로 폴더하나를 만듬
+python manage.py startapp diary
+
+7. 이제 settings.py/ urls.py/ models.py/ views.py 등의 폴더에 설정을 해줌
+
+8. 그 이후 cmd창에서 다음의 명령입력
+python manage.py makemigrations
+-> 이러면 Diary모델이 추가됨
+python manage.py migrate
+
+9. python manage.py runserver 로 Django서버 실행
